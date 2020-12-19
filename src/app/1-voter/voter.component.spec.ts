@@ -39,4 +39,14 @@ describe('VoterComponent', () => {
 
     expect(element.innerText).toContain('21') // contain => for strings...toBe for ints
   });
+
+  // class binding
+  it('should highlight button when myvote is equal to 1', () => {
+    voterComponent.myVote = 1;
+    fixture.detectChanges();
+
+    let debugElement = fixture.debugElement.query(By.css('.glyphicon-menu-up')); // this class, since highlight comes from that
+
+    expect(debugElement.classes['highlighted']).toBeTruthy()
+  })
 });
