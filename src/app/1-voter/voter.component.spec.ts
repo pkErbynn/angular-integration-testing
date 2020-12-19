@@ -2,6 +2,12 @@ import { VoterComponent } from './voter.component';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
+// In template, what do we test? Ans: test anything bindings, ie
+// event bindings,
+// property bindings,
+// style bindings
+// class bindings
+
 describe('VoterComponent', () => {
   let fixture: ComponentFixture<VoterComponent>;
   let voterComponent: VoterComponent;
@@ -19,12 +25,13 @@ describe('VoterComponent', () => {
     // fixture.debugElement // gets dom element...wrapper of native element at the top line :)
   });
 
+  // property bindings
   it('should render totalVote in template when upvoted', () => {
     voterComponent.othersVote = 20;
     voterComponent.myVote = 1;
     fixture.detectChanges(); // update the component with the data
 
-    // voterComponent.upVote(); // DON'T call method in component
+    // voterComponent.upVote(); // DON'T need to call this method in component to update totalVote
 
     // fixture wrapper achitecture....fixture => compoenentInstance & debugElement(gets classes and tags in dom) => nativeElemeent(gets actual values)
     let debugElement = fixture.debugElement.query(By.css('.vote-count')) // debug by query to get
