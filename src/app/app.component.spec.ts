@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-integration-testing');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content h3').textContent).toContain('angular-integration-testing app is running!');
-  });
+  // it('should render title', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement;
+  //   expect(compiled.querySelector('.content h3').textContent).toContain('angular-integration-testing app is running!');
+  // });
 });
