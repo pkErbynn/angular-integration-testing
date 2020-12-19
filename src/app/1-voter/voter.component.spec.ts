@@ -49,4 +49,13 @@ describe('VoterComponent', () => {
 
     expect(debugElement.classes['highlighted']).toBeTruthy()
   })
+
+   // event binding
+   it('should increase myvote by 1 if upvoted is triggered in template', () => {
+    let buttonDebugElement = fixture.debugElement.query(By.css('.glyphicon-menu-up')); // gets button
+    buttonDebugElement.triggerEventHandler('click', null); // click() => null ...click(data) => data
+    // voterComponent.upVote() // similar trigger with that of unit test but not needed here
+
+    expect(voterComponent.myVote).toBe(1)
+  })
 });
