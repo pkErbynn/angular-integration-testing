@@ -1,17 +1,43 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
+import { RouterOutlet, RouterLink, RouterLinkWithHref } from '@angular/router';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let fixture: ComponentFixture<AppComponent>;
+  let appComponent: AppComponent;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule.withRoutes([]) // empty route for testing
       ],
       declarations: [
         AppComponent
       ],
-    }).compileComponents();
+    })
+
+    fixture = TestBed.createComponent(AppComponent);
+    appComponent = fixture.componentInstance;
+  });
+
+  // testing that this component contain a router outlet
+  fit('should contain a rounter outlet', () => {
+    let debugElement = fixture.debugElement.query(By.directive(RouterOutlet));
+    fixture.detectChanges();
+
+    expect(debugElement).not.toBeNull();
+  });
+
+  // testing that this component contain a router outlet
+  fit('should contain a router link pointing to the to the todos page', () => {
+    let debugElement = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref)); // find all element on template
+    fixture.detectChanges();
+
+    // <a href = "/todos" /> ....rec by routerLink implicitly
+    let index = debugElement.findIndex(e => e.properties['href'] === '/todos')
+    expect(index).toBeGreaterThan(-1);
   });
 
   it('should create the app', () => {
