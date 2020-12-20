@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserDetailsComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
-  userId: any 
+  userId: any
 
   ngOnInit() {
     this.route.params.subscribe(p => {
@@ -17,7 +17,7 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  save() { 
+  save() {
     this.router.navigate(['users']);
   }
 }
