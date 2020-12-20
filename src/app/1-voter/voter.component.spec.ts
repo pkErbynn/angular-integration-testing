@@ -8,7 +8,7 @@ import { By } from '@angular/platform-browser';
 // style bindings
 // class bindings
 
-describe('VoterComponent', () => {
+fdescribe('VoterComponent', () => {
   let fixture: ComponentFixture<VoterComponent>;
   let voterComponent: VoterComponent;
 
