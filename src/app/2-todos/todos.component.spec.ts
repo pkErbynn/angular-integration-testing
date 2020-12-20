@@ -6,7 +6,6 @@ import { DebugElement } from '@angular/core';
 import { TodosComponent } from './todos.component';
 import { TodoService } from './todo.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Observable, from } from 'rxjs';
 
 // Testing dependencies provisioning
 // TodoService as a dependency to TodosComponent.

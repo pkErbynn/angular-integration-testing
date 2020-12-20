@@ -1,12 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserDetailsComponent } from './user-details.component';
-import { AppRoutingModule } from '../app-routing.module';
-import { Observable, Subject } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
 
 // Testing Navigation
 // This tests the interraction of the component to the stubbed router instead of a real one
@@ -40,7 +37,7 @@ describe('UserDetailsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserDetailsComponent ],
-      // imports: [ AppRoutingModule]
+      // imports: [ AppRoutingModule] // not needed
 
       // stubbing navigation dependencies
       providers: [
@@ -61,7 +58,7 @@ describe('UserDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should redirect user to users page on save()', () => {
+  it('should redirect user to users page on save()', () => {
     // get access to router
     let router = TestBed.get(Router);
     // no call fake method cus method is already faked
@@ -73,7 +70,7 @@ describe('UserDetailsComponent', () => {
   });
 
   // testing how to use route / path params
-  fit('should redirect user to not found page if an invalid user id passed', () => {
+  it('should redirect user to not found page if an invalid user id passed', () => {
     let router = TestBed.get(Router); // gets router
     let spy = spyOn(router, 'navigate')
 
