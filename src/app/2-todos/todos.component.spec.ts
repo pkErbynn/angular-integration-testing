@@ -8,7 +8,7 @@ import { TodoService } from './todo.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 
-// Providing dependencies
+// Testing dependencies provisioning
 // TodoService as a dependency to TodosComponent.
 // Uses http module
 
