@@ -45,7 +45,7 @@ describe('TodosComponent', () => {
   });
 
 
-  // Testing Async of Promise
+  // Testing Async of Promise unlike Observable to behave as sync also
   fit('should load todos from server promisically :)', fakeAsync(() => {
     let todoService = TestBed.get(TodoService); //get service instance at root module
     spyOn(todoService, 'getTodosPromise').and.returnValue(Promise.resolve( [1,2,3] )); // from() api doesn't work at that moment (that's the reason it's excluded from test run)
