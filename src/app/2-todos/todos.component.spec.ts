@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -43,4 +43,22 @@ describe('TodosComponent', () => {
 
     expect(component.todos.length).toBe(3);
   });
+
+
+  // Testing Async of Promise
+  fit('should load todos from server promisically :)', fakeAsync(() => {
+    let todoService = TestBed.get(TodoService); //get service instance at root module
+    spyOn(todoService, 'getTodosPromise').and.returnValue(Promise.resolve( [1,2,3] )); // from() api doesn't work at that moment (that's the reason it's excluded from test run)
+
+    fixture.detectChanges(); // update component after observable creation
+
+    tick(); // async deal
+    expect(component.todos.length).toBe(3);
+    console.log("EXPECT WAS CALLED");
+
+    // or this with 'async'
+    // fixture.whenStable().then(() => {
+    //   expect(component.todos.length).toBe(3);
+    // })
+  }));
 });
