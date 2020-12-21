@@ -1,9 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterLinkWithHref } from '@angular/router';
+import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NavComponent } from './nav.component';
-import { By } from '@angular/platform-browser';
-import { RouterLinkWithHref } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+
+
+// Testing Router Link
 
 describe('NavComponent', () => {
   let component: NavComponent;

@@ -1,15 +1,13 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { TodosComponent } from './todos.component';
 import { TodoService } from './todo.service';
-import { HttpClientModule } from '@angular/common/http';
 
 // Testing dependencies provisioning
 // TodoService as a dependency to TodosComponent.
 // Uses http module
+// Async Testing
 
 describe('TodosComponent', () => {
   let component: TodosComponent;

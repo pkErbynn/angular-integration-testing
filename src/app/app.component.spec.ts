@@ -6,6 +6,8 @@ import { RouterOutlet, RouterLink, RouterLinkWithHref } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
+// Testing Router Outlet
+
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let appComponent: AppComponent;

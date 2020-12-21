@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Subject } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -6,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserDetailsComponent } from './user-details.component';
 
 // Testing Navigation
+// Testing Router and ActivatedRoute
 // This tests the interraction of the component to the stubbed router instead of a real one
 // Stubbed dependencies approach is used when dependencies to be provided are complex. eg: router
 
